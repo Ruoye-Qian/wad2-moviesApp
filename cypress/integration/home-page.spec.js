@@ -58,7 +58,16 @@ describe("Home Page ", () => {
              cy.wrap($card).find("p").contains(matchingMovies[index].title);
            });
          });
-       })
+         it("should display the exceptional case with no matches", () => {
+            let searchString = "xyz";
+            let matchingMovies = filterByTitle(movies, searchString);
+            cy.get("#filled-search").clear().type(searchString); 
+            cy.get(".MuiCardHeader-content").should(
+              "have.length",
+              matchingMovies.length
+            );
+          });
+       });
        describe("By movie genre" ,() => {
          // More later
        });
