@@ -1,6 +1,7 @@
 let movieId = 335983; // The movie Venom
 let movie;
 let reviews;
+let images;
 
 describe("Movie Details Page", () => {
   before(() => {
@@ -13,6 +14,17 @@ describe("Movie Details Page", () => {
       .then((movieDetails) => {
         movie = movieDetails;
         return movieDetails.id;
+      });
+
+    cy.request(
+      `https://api.themoviedb.org/3/movie/${movieId}/images?api_key=${Cypress.env(
+        "TMDB_KEY"
+       )}`
+    )
+      .its("body")
+      .then((movieImages) => {
+        images = movieImages;
+        return movieImages.id;
       });
   });
   beforeEach(() => {
@@ -34,6 +46,12 @@ describe("Movie Details Page", () => {
             cy.get("span").each(($card, index) => {
               cy.wrap($card).contains(genreChips[index]);
             });
+        });
+    });
+    it("should display the movie's poster", () => {
+        const src=images.posters.map((i)=>i.file_path);
+        cy.get("img").each(($img,index)=>{
+            cy.wrap($img).should("have.attr","src","https://image.tmdb.org/t/p/w500/"+src[index]);
         });
     });
   });
