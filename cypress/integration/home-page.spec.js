@@ -7,6 +7,9 @@ const filterByTitle = (movieList, string) =>
 const filterByGenre = (movieList, genreId) =>
   movieList.filter((m) => m.genre_ids.includes(genreId));
 
+const filterByTitleAndGenre =(moveList,string,genreId)=>
+  moveList.filter((m)=> m.title.toLowerCase().search(string) !== -1 && m.genre_ids.includes(genreId));
+
 describe("Home Page ", () => {
   before(() => {
     // Get movies from TMDB and store in movies variable.
@@ -84,5 +87,39 @@ describe("Home Page ", () => {
            });
          });
         });
+
+        describe("By movie title and genre", () => {
+            it("should display movies with o in the title and matching the specified genre", () => {
+              let searchString = "o";
+              const selectedGenreId = 35;
+              const selectedGenreText = "Comedy";
+              const matchingMovies=filterByTitleAndGenre(movies,searchString,selectedGenreId);
+              cy.get("#filled-search").clear().type(searchString); 
+              cy.get("#genre-select").click();
+              cy.get("li").contains(selectedGenreText).click();
+              cy.get(".MuiCardHeader-content").should(
+                "have.length",
+                matchingMovies.length
+              );
+              cy.get(".MuiCardHeader-content").each(($card, index) => {
+                cy.wrap($card).find("p").contains(matchingMovies[index].title);
+              });
+            });
+            it("should display the exceptional case with no matches", () => {
+                let searchString = "xyz";
+                const selectedGenreId = 35;
+                const selectedGenreText = "Comedy";
+                let matchingMovies = filterByTitleAndGenre(movies,searchString,selectedGenreId);
+                cy.get("#filled-search").clear().type(searchString); 
+                cy.get("#genre-select").click();
+                cy.get("li").contains(selectedGenreText).click();
+                cy.get(".MuiCardHeader-content").should(
+                  "have.length",
+                  matchingMovies.length
+                );
+            });
+        });
+
+
     });
 });
