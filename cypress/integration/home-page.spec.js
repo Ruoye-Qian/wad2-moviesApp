@@ -119,7 +119,23 @@ describe("Home Page ", () => {
                 );
             });
         });
+    });
 
-
+    describe("select and add favourite movie", () => {
+      beforeEach(() => {
+        cy.get("button[aria-label='add to favorites']").eq(0).click();
+        cy.get("button[aria-label='add to favorites']").eq(1).click();
+        cy.get("header").find(".MuiToolbar-root").find("button").eq(2).click();
+      });
+      it("should display an avatar at the top of the movie card and add favourite movie to the Favourite movies page", () => {
+        cy.get(".MuiCardHeader-avatar").eq(0).click();
+        cy.get(".MuiCardHeader-avatar").eq(1).click();
+        cy.url().should("include", `/favorites`);
+        cy.get(".MuiCardHeader-content").contains(movies[0].title);
+        
+        // cy.get(".MuiCardActions-root").eq(0).contains("More Info").click();
+        // cy.url().should("include", `/movies/${movies[0].id}`);
+        // cy.get("h3").contains(movies[0].title);
+      });
     });
 });
