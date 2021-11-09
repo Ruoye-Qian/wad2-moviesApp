@@ -4,14 +4,14 @@ import { MoviesContext } from "../contexts/moviesContext";
 import { useQueries } from "react-query";
 import { getMovie } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
-import RemoveFromFavorites from "../components/cardIcons/removeFromFavorites";
-import WriteReview from "../components/cardIcons/writeReview";
+import RemoveFromWatches from "../components/cardIcons/removeFromWatches";
+//import WriteReview from "../components/cardIcons/writeReview";
 
-const FavoriteMoviesPage = () => {
-  const {favorites: movieIds } = useContext(MoviesContext);
+const WatchMoviesPage = () => {
+  const {watches: movieIds } = useContext(MoviesContext);
 
   // Create an array of queries and run in parallel.
-  const favoriteMovieQueries = useQueries(
+  const watchMovieQueries = useQueries(
     movieIds.map((movieId) => {
       return {
         queryKey: ["movie", { id: movieId }],
@@ -20,23 +20,22 @@ const FavoriteMoviesPage = () => {
     })
   );
   // Check if any of the parallel queries is still loading.
-  const isLoading = favoriteMovieQueries.find((m) => m.isLoading === true);
+  const isLoading = watchMovieQueries.find((m) => m.isLoading === true);
 
   if (isLoading) {
     return <Spinner />;
   }
-  const movies = favoriteMovieQueries.map((q) => q.data);
+  const movies = watchMovieQueries.map((q) => q.data);
   //const toDo = () => true;
 
   return (
     <PageTemplate
-      title="Favorite Movies"
+      title="Must Watch Movies"
       movies={movies}
       action={(movie) => {
         return (
           <>
-            <RemoveFromFavorites movie={movie} />
-            <WriteReview movie={movie} />
+            <RemoveFromWatches movie={movie} />
           </>
         );
       }}
@@ -44,4 +43,4 @@ const FavoriteMoviesPage = () => {
   );
 };
 
-export default FavoriteMoviesPage;
+export default WatchMoviesPage;
