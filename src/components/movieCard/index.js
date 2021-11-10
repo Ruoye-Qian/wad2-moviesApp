@@ -28,8 +28,10 @@ const useStyles = makeStyles({
 
 export default function MovieCard({ movie, action }) {
   const classes = useStyles();
-  const { favorites, addToFavorites } = useContext(MoviesContext);
-  const { watches, addToWatches } = useContext(MoviesContext);
+  // const { favorites, addToFavorites } = useContext(MoviesContext);
+  // const { watches, addToWatches } = useContext(MoviesContext);
+  const { favorites } = useContext(MoviesContext);
+  const { watches } = useContext(MoviesContext);
 
   if (favorites.find((id) => id === movie.id)) {
     movie.favorite = true;
@@ -37,10 +39,10 @@ export default function MovieCard({ movie, action }) {
     movie.favorite= false;
   }
 
-  const handleAddToFavorite = (e) => {
-     e.preventDefault();
-     addToFavorites(movie);
-  };
+  // const handleAddToFavorite = (e) => {
+  //    e.preventDefault();
+  //    addToFavorites(movie);
+  // };
 
   if (watches.find((id) => id === movie.id)) {
       movie.watch = true;
@@ -48,10 +50,10 @@ export default function MovieCard({ movie, action }) {
       movie.watch = false
   }
 
-  const handleAddToWatch = (e) => {
-    e.preventDefault();
-     addToWatches(movie);
-  };
+  // const handleAddToWatch = (e) => {
+  //   e.preventDefault();
+  //    addToWatches(movie);
+  // };
 
 
   return (
