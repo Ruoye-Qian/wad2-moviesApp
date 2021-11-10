@@ -27,9 +27,16 @@ const MoviesContextProvider = (props) => {
     setMyReviews( {...myReviews, [movie.id]: review } )
   };
 
-  const addToWatches=(movie)=>{
-    setWatches([...watches,movie.id])
-    //console.log([...watches,movie.id])
+  // const addToWatches=(movie)=>{
+  //   setWatches([...watches,movie.id])
+  //   //console.log([...watches,movie.id])
+  // };
+  const addToWatches = (movie) => {
+    let newWatches = [];
+    if (!watches.includes(movie.id)){
+      newWatches = [...watches, movie.id];
+    }
+    setWatches(newWatches)
   };
 
   const removeFromWatches = (movie) => {
