@@ -5,6 +5,7 @@ image: cypress/browsers:node12.0.0-chrome73
 stages:
   - install
   - build
+  - exercise
   - test
 
 variables:
@@ -51,3 +52,10 @@ test_jobX:
     - branchX
   script:
     - echo "Run test job X"
+
+exercise_job:
+  stage: exercise
+  only:
+    - main
+  script:
+    - echo "Run test exercise job"
