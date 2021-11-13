@@ -41,7 +41,7 @@ export default function FilterMoviesCard(props) {
     return <h1>{error.message}</h1>;
   }
   const genres = data.genres;
-  if(genres[0].name!=="All"){
+  if (genres[0].name !== "All"){
     genres.unshift({ id: "0", name: "All" });
   }
 

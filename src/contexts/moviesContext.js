@@ -7,10 +7,17 @@ const MoviesContextProvider = (props) => {
   const [myReviews, setMyReviews] = useState( {} ) 
   const [watches,setWatches]=useState( [] )
 
+  // const addToFavorites = (movie) => {
+  //   setFavorites([...favorites,movie.id])
+  // };
   const addToFavorites = (movie) => {
-    setFavorites([...favorites,movie.id])
+    let newFavorites = [];
+    if (!favorites.includes(movie.id)){
+      newFavorites = [...favorites, movie.id];
+    }
+    setFavorites(newFavorites)
   };
-  
+
   const removeFromFavorites = (movie) => {
     setFavorites( favorites.filter(
       (mId) => mId !== movie.id
@@ -20,11 +27,18 @@ const MoviesContextProvider = (props) => {
     setMyReviews( {...myReviews, [movie.id]: review } )
   };
 
-  const addToWatches=(movie)=>{
-    setWatches([...watches,movie.id])
-    //console.log([...watches,movie.id])
-  };
+  // const addToWatches=(movie)=>{
+  //   setWatches([...watches,movie.id])
+  // };
 
+  const addToWatches = (movie) => {
+    let newWatches = [];
+    if (!watches.includes(movie.id)){
+      newWatches = [...watches, movie.id];
+    }
+    setWatches(newWatches)
+  };
+  
   const removeFromWatches = (movie) => {
     setWatches( watches.filter(
       (mId) => mId !== movie.id
