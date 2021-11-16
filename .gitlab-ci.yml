@@ -18,12 +18,12 @@ install_dependencies:
       - node_modules/
 
 bundle_app:
-stage: build
-script:
-  - npm run build
-artifacts:
-  paths:
-    - build/
+  stage: build
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - build/
 
 e2etest:    
   stage: test
