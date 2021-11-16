@@ -2,5 +2,5 @@
     "baseUrl": "http://localhost:3000/",
     "viewportWidth": 1980,
     "viewportHeight": 1080,
-    "responseTimeout":60000
+    "responseTimeout":6000
 }
