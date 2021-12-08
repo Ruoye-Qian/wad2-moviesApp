@@ -15,6 +15,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 import WatchMoviesPage from './pages/watchMoviesPage';
 import NowplayingMoviesPage from './pages/nowplayingMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
+import PopularMoviesPage from './pages/popularMoviesPage';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
+        <Route exact path="/movies/popular" component={PopularMoviesPage} />
         <Route exact path="/movies/topRated" component={TopRatedMoviesPage} />
         <Route exact path="/movies/nowplaying" component={NowplayingMoviesPage} />
         <Route exact path="/movies/watches" component={WatchMoviesPage} />
