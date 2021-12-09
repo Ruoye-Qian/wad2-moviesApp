@@ -5,7 +5,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
-
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
@@ -31,9 +30,9 @@ const SiteHeader = ( { history }) => {
     { label: "Home", path: "/" },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favorites" },
-    { label: "Watches", path: "/movies/watches" },
+    { label: "Watch List", path: "/movies/watches" },
     { label: "Now playing", path: "/movies/nowplaying" },
-    { label: "TopRated", path: "/movies/topRated" },
+    { label: "Top Rated", path: "/movies/topRated" },
     { label: "Popular", path: "/movies/popular" },
   ];
 
