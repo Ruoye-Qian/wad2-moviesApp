@@ -17,6 +17,12 @@ import NowplayingMoviesPage from './pages/nowplayingMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import PopularMoviesPage from './pages/popularMoviesPage';
 import RecommendationMoviesPage from './pages/recommendationMoviesPage';
+import SignUpPage from './signup';
+import LoginPage from './login';
+
+import { FirebaseAppProvider } from 'reactfire';
+import firebaseConfig from './firebaseConfig';
+import { useFirebaseApp } from 'reactfire' ;
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -29,6 +35,8 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+  const firebase = useFirebaseApp();
+  console.log(firebase);
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -46,6 +54,8 @@ const App = () => {
         <Route path="/reviews/:id" component={MovieReviewPage} />
         <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
         <Route path="/movies/:id" component={MoviePage} />
+        <Route exact path="/signup" component={SignUpPage} />
+        <Route exact path="/login" component={LoginPage} />
         <Route exact path="/" component={HomePage} />
         <Redirect from="*" to="/" />
         </Switch>
@@ -53,7 +63,8 @@ const App = () => {
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
+    
   );
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<FirebaseAppProvider firebaseConfig={firebaseConfig}><App /></FirebaseAppProvider>, document.getElementById("root"));
