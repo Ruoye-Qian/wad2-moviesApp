@@ -36,7 +36,7 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
 
   return (
     <>
-      <Typography variant="h5" component="h3">
+      <Typography variant="h5" component="h3" align="center">
       Biography
       </Typography>
 
