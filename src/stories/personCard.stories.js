@@ -2,7 +2,7 @@ import React from "react";
 import PersonCard from "../components/personCard";
 import SamplePerson from "./samplePersonData";
 import { MemoryRouter } from "react-router";
-import PersonsContextProvider from "../contexts/personsContext";
+import PersonsContextProvider from "../contexts/moviesContext";
 import { action } from "@storybook/addon-actions";
 import AddToLikesIcon from "../components/cardIcons/addToLike";
 

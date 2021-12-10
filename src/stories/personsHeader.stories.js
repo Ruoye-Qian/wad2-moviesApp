@@ -1,7 +1,7 @@
 import React from "react";
 import PersonsHeader from "../components/headerPersonList";
 import { MemoryRouter } from "react-router";
-import PersonsContextProvider from "../contexts/personsContext";
+import PersonsContextProvider from "../contexts/moviesContext";
 
 export default {
   title: "Home Page/PersonPageHeader",
@@ -12,6 +12,6 @@ export default {
   ],
 };
 
-export const Basic = () => <PersonsHeader name="Actors" />;
+export const Basic = () => <PersonsHeader title="Actors" />;
 
 Basic.storyName = "Default";

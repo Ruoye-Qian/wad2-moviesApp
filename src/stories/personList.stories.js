@@ -5,7 +5,7 @@ import { MemoryRouter } from "react-router";
 import { action } from "@storybook/addon-actions";
 import AddToLikeIcon from "../components/cardIcons/addToLike";
 import Grid from "@material-ui/core/Grid";
-import PersonsContextProvider from "../contexts/personsContext";
+import PersonsContextProvider from "../contexts/moviesContext";
 
 export default {
   title: "Home Page/PersonList",

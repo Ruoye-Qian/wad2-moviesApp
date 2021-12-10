@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Header = ({ name, history }) => {
+const Header = ({ title, history }) => {
   const classes = useStyles();
   return (
     <Paper component="div" className={classes.root}>
@@ -25,7 +25,7 @@ const Header = ({ name, history }) => {
       </IconButton>
 
       <Typography variant="h4" component="h3">
-        {name}
+        {title}
       </Typography>
       <IconButton aria-label="go forward" onClick={() => history.goForward()}>
         <ArrowForwardIcon color="primary" fontSize="large" />

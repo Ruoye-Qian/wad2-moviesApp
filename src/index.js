@@ -23,6 +23,7 @@ import PersonPage from './pages/personPage';
 import { FirebaseAppProvider } from 'reactfire';
 import firebaseConfig from './firebaseConfig';
 import { useFirebaseApp } from 'reactfire' ;
+//import PersonsContextProvider from "./contexts/moviesContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -61,6 +62,9 @@ const App = () => {
         <Redirect from="*" to="/" />
         </Switch>
         </MoviesContextProvider>
+        {/* <PersonsContextProvider>
+        <Route exact path="/persons" component={PersonPage} />
+        </PersonsContextProvider> */}
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>

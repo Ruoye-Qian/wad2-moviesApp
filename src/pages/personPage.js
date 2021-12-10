@@ -18,8 +18,8 @@ const PersonPage = (props) => {
   const persons = data.results;
 
   // Redundant, but necessary to avoid app crashing.
-  const likes = persons.filter(m => m.like)
-  localStorage.setItem('likes', JSON.stringify(likes))
+  // const favorites = persons.filter(m => m.favorite)
+  // localStorage.setItem('favorites', JSON.stringify(favorites))
   //const addToFavorites = (movieId) => true 
 
   return (

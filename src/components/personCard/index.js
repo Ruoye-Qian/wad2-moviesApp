@@ -16,7 +16,7 @@ import StarRateIcon from "@material-ui/icons/StarRate";
 //import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 import img from '../../images/film-poster-placeholder.png'
-import { PersonsContext } from "../../contexts/personsContext";
+import { MoviesContext } from "../../contexts/moviesContext";
 
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
@@ -29,7 +29,7 @@ const useStyles = makeStyles({
 export default function PersonCard({ person, action }) {
   const classes = useStyles();
   //const { favorites,handleAddToFavorite } = useContext(MoviesContext);
-  const { likes } = useContext(PersonsContext);
+  const { likes } = useContext(MoviesContext);
   //const { watches } = useContext(PersonsContext);
 
   if (likes.find((id) => id === person.id)) {
