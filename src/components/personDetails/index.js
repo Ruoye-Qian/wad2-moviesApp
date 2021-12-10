@@ -62,15 +62,6 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
         </li>
       </Paper>
 
-      {/* <Paper component="ul" className={classes.root}>
-        <li>
-          <Chip label="also_known_as" className={classes.chip} color="primary" />
-        </li>
-        <li>
-          <Chip label={person.also_known_as} className={classes.chip}/>
-        </li>
-      </Paper> */}
-
       <Paper component="ul" className={classes.root}>
         <li>
           <Chip label="known_for_department" className={classes.chip} color="primary" />
@@ -100,20 +91,6 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
           </li>
         ))}
       </Paper> */}
-      
-
-      {/* <Fab
-        color="secondary"
-        variant="extended"
-        onClick={() =>setDrawerOpen(true)}
-        className={classes.fab}
-      >
-        <NavigationIcon />
-        Reviews
-      </Fab> */}
-      {/* <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <MovieReviews movie={movie} />
-      </Drawer> */}
 
     </>
   );

@@ -54,11 +54,11 @@ const MoviesContextProvider = (props) => {
     setLikes(newLikes)
   };
   
-//   const removeFromLikes = (person) => {
-//     setLikes( likes.filter(
-//       (mId) => mId !== person.id
-//     ) )
-//   };
+  const removeFromLikes = (person) => {
+    setLikes( likes.filter(
+      (mId) => mId !== person.id
+    ) )
+  };
 
   return (
     <MoviesContext.Provider
@@ -72,6 +72,7 @@ const MoviesContextProvider = (props) => {
         addToWatches,
         removeFromWatches,
         addToLikes,
+        removeFromLikes,
       }}
     >
       {props.children}
