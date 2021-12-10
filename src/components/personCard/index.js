@@ -10,6 +10,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
+import StarsIcon from '@material-ui/icons/Grade';
 //import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
 import StarRateIcon from "@material-ui/icons/StarRate";
 //import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
@@ -62,7 +63,7 @@ export default function PersonCard({ person, action }) {
       avatar={
         person.like ? (
           <Avatar className={classes.avatar}>
-            <FavoriteIcon />
+            <StarsIcon />
           </Avatar>
         ) : null
       }
@@ -82,7 +83,7 @@ export default function PersonCard({ person, action }) {
       />
       <CardContent>
         <Grid container>
-          <Grid item xs={6}>
+        <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
               {person.popularity}
