@@ -66,13 +66,14 @@ const MoviesContextProvider = (props) => {
         favorites,
         watches,
         likes,
+        addToLikes,
+        removeFromLikes,
         addToFavorites,
         removeFromFavorites,
         addReview,
         addToWatches,
         removeFromWatches,
-        addToLikes,
-        removeFromLikes,
+
       }}
     >
       {props.children}
