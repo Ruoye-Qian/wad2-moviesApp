@@ -11,6 +11,22 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Snackbar from "@material-ui/core/Snackbar"; 
 import MuiAlert from "@material-ui/lab/Alert";
 
+import { styled } from '@material-ui/core/styles';
+import Rating from '@material-ui/lab/Rating';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
+const StyledRating = styled(Rating)({
+  '& .MuiRating-iconFilled': {
+    color: '#ff6d75',
+  },
+  '& .MuiRating-iconHover': {
+    color: '#ff3d47',
+  },
+});
+
+
+
 const ratings = [
   {
     value: 5,
@@ -188,8 +204,26 @@ const ReviewForm = ({ movie, history }) => {
             Reset
           </Button>
         </Box>
-      </form>
+
+      <Box
+      sx={{
+        '& > legend': { mt: 2 },
+      }}
+    >
+      <Typography component="legend">Personal liking</Typography>
+      <StyledRating
+        name="customized-color"
+        defaultValue={2}
+        getLabelText={(value) => `${value} Heart${value !== 1 ? 's' : ''}`}
+        precision={0.5}
+        icon={<FavoriteIcon fontSize="inherit" />}
+        emptyIcon={<FavoriteBorderIcon fontSize="inherit" />}
+      />
     </Box>
+
+    </form>
+    </Box>
+    
   );
 };
 
