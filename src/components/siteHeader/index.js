@@ -11,6 +11,8 @@ import Menu from "@material-ui/core/Menu";
 import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import {TemporaryDrawer} from "../drawer";
+import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -33,9 +35,9 @@ const SiteHeader = ( { history }) => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Watch List", path: "/movies/watches" },
-    { label: "Now playing", path: "/movies/nowplaying" },
-    { label: "Top Rated", path: "/movies/topRated" },
-    { label: "Popular", path: "/movies/popular" },
+    // { label: "Now playing", path: "/movies/nowplaying" },
+    // { label: "Top Rated", path: "/movies/topRated" },
+    // { label: "Popular", path: "/movies/popular" },
     { label: "Actor", path: "/persons" },
     { label: "Likes", path: "/persons/likes" },
   ];
@@ -56,6 +58,9 @@ const SiteHeader = ( { history }) => {
           <Typography variant="h4" className={classes.title}>
             TMDB Client
           </Typography>
+          <HomeRoundedIcon/>
+          <TemporaryDrawer/>
+          <div/>
           <Typography variant="h6" className={classes.title}>
             All you ever wanted to know about Movies!
           </Typography>
