@@ -46,15 +46,6 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
 
       <Paper component="ul" className={classes.root}>
         <li>
-          <Chip label="gender" className={classes.chip} color="primary" />
-        </li>
-        <li>
-            <Chip label={person.name} className={classes.chip} />
-        </li>
-      </Paper>
-
-      <Paper component="ul" className={classes.root}>
-        <li>
           <Chip label="birthday" className={classes.chip} color="primary" />
         </li>
         <li>

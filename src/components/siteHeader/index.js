@@ -50,7 +50,8 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary">
+      <AppBar position="fixed" color="secondary" >
+      {/* backgroundColor="#03a9f4" */}
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
             TMDB Client

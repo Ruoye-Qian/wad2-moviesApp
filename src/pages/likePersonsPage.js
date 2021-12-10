@@ -5,7 +5,6 @@ import { useQueries } from "react-query";
 import { getPerson } from "../api/tmdb-api";
 import Spinner from '../components/spinner'
 import RemoveFromLikes from "../components/cardIcons/removeFromLikes";
-//import WriteReview from "../components/cardIcons/writeReview";
 
 const LikePersonsPage = () => {
   const {likes: personIds } = useContext(MoviesContext);
@@ -40,7 +39,7 @@ const LikePersonsPage = () => {
         return (
           <>
             <RemoveFromLikes person={person} />
-            {/* <WriteReview movie={movie} /> */}
+            {/* <WriteComment person={person} />  */}
           </>
         );
       }}

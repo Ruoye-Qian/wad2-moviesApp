@@ -9,7 +9,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CardHeader from "@material-ui/core/CardHeader";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import FavoriteIcon from "@material-ui/icons/Favorite";
+import EmojiEmotionsTwoToneIcon from '@material-ui/icons/EmojiEmotionsTwoTone';
 import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
 import StarRateIcon from "@material-ui/icons/StarRate";
 //import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd';
@@ -62,7 +62,7 @@ export default function MovieCard({ movie, action }) {
       avatar={
         movie.favorite ? (
           <Avatar className={classes.avatar}>
-            <FavoriteIcon />
+            <EmojiEmotionsTwoToneIcon />
           </Avatar>
         ) : null
       }

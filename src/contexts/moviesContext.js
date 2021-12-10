@@ -60,6 +60,7 @@ const MoviesContextProvider = (props) => {
     ) )
   };
 
+
   return (
     <MoviesContext.Provider
       value={{
@@ -73,7 +74,6 @@ const MoviesContextProvider = (props) => {
         addReview,
         addToWatches,
         removeFromWatches,
-
       }}
     >
       {props.children}
