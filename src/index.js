@@ -19,7 +19,7 @@ import PopularMoviesPage from './pages/popularMoviesPage';
 import RecommendationMoviesPage from './pages/recommendationMoviesPage';
 import SignUpPage from './signup';
 import LoginPage from './login';
-
+import PersonPage from './pages/personPage';
 import { FirebaseAppProvider } from 'reactfire';
 import firebaseConfig from './firebaseConfig';
 import { useFirebaseApp } from 'reactfire' ;
@@ -44,6 +44,7 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
+        <Route exact path="/persons" component={PersonPage} />
         <Route exact path="/movies/:id/recommendations" component={RecommendationMoviesPage} />
         <Route exact path="/movies/popular" component={PopularMoviesPage} />
         <Route exact path="/movies/topRated" component={TopRatedMoviesPage} />
