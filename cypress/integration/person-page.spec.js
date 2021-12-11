@@ -72,25 +72,16 @@ describe("Person Page ", () => {
 
     describe("Selecting favourite actors", () => {
       it("should display an avatar for tagged movies and list them on the likePerson page", () => {
-        cy.get(".MuiAvatar-root").should(
-          "have.length",
-          0
-        );   
+        cy.get(".MuiAvatar-root").should("have.length",0);   
         cy.get("button[aria-label='add to likes']").eq(0).click();
         cy.get("button[aria-label='add to likes']").eq(2).click();
-        cy.get(".MuiAvatar-root").should(
-          "have.length",
-          2
-        );  
+        cy.get(".MuiAvatar-root").should("have.length",2);  
         // Are correct cards tagged?
         cy.get(".MuiCardHeader-root").eq(0).find(".MuiAvatar-root")    
         cy.get(".MuiCardHeader-root").eq(2).find(".MuiAvatar-root")    
         // Check the likePerson page.
         cy.get("header").find(".MuiToolbar-root").find("button").eq(6).click();
-        cy.get(".MuiCardHeader-content").should(
-          "have.length",
-          2
-        );
+        cy.get(".MuiCardHeader-content").should("have.length",2);
         cy.get(".MuiCardHeader-content").eq(0).find("p").contains(persons[0].name)
         cy.get(".MuiCardHeader-content").eq(1).find("p").contains(persons[2].name)
       });

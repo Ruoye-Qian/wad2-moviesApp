@@ -10,11 +10,11 @@ const filterByGenre = (movieList, genreId) =>
 const filterByTitleAndGenre =(moveList,string,genreId)=>
   moveList.filter((m)=> m.title.toLowerCase().search(string) !== -1 && m.genre_ids.includes(genreId));
 
-describe("Home Page ", () => {
+describe("Upcoming Page ", () => {
   before(() => {
     // Get movies from TMDB and store in movies variable.
     cy.request(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${Cypress.env(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${Cypress.env(
         "TMDB_KEY"
       )}&language=en-US&include_adult=false&include_video=false&page=1`
     )
@@ -25,12 +25,12 @@ describe("Home Page ", () => {
   })
 
   beforeEach(() => {
-    cy.visit("/")
+    cy.visit("movies/upcoming")
   });
   
     describe("Base test", () => {
       it("displays page header", () => {
-        cy.get("h3").contains("Discover Movies");
+        cy.get("h3").contains("Upcoming Movies");
         cy.get("h1").contains("Filter the movies");
       });
     });
@@ -92,9 +92,7 @@ describe("Home Page ", () => {
             it("should display movies with o in the title and matching the specified genre", () => {
               const selectedGenreId = 35;
               const selectedGenreText = "Comedy";
-              //const genrematchingMovies=filterByGenre(movies,selectedGenreId);
               let searchString = "o";
-              //const matchingMovies=filterByTitle(genrematchingMovies,searchString);
               const matchingMovies=filterByTitleAndGenre(movies,searchString,selectedGenreId);
               cy.get("#filled-search").clear().type(searchString); 
               cy.get("#genre-select").click();
@@ -123,19 +121,20 @@ describe("Home Page ", () => {
         });
     });
 
-    describe("select and add favourite movie", () => {
-      it("should display an avatar for tagged movies and list them on the Favourites page", () => {  
-        cy.get("button[aria-label='add to favorites']").eq(0).click();
-        cy.get("button[aria-label='add to favorites']").eq(2).click();
-        cy.get(".MuiAvatar-root").should("have.length",2);  
-        // Are correct cards tagged?
-        cy.get(".MuiCardHeader-root").eq(0).find(".MuiAvatar-root")    
-        cy.get(".MuiCardHeader-root").eq(2).find(".MuiAvatar-root")    
-        // Check the Favourites page.
-        cy.get("header").find(".MuiToolbar-root").find("button").eq(2).click();
-        cy.get(".MuiCardHeader-content").should("have.length",2);
-        cy.get(".MuiCardHeader-content").eq(0).find("p").contains(movies[0].title)
-        cy.get(".MuiCardHeader-content").eq(1).find("p").contains(movies[2].title)
+    describe("Add to watch-list button test", () => {
+        it("should display an avatar for tagged movies and list them on the watchList page", () => {
+            cy.get("button[aria-label='add to watches']").eq(0).click();
+            cy.get("button[aria-label='add to watches']").eq(2).click();
+            // Are correct cards tagged?
+            // cy.get(".MuiCardHeader-root").eq(0).find(".MuiAvatar-root")    
+            // cy.get(".MuiCardHeader-root").eq(2).find(".MuiAvatar-root")    
+            // Check the watched page.
+            cy.get("header").find(".MuiToolbar-root").find("button").eq(4).click();
+            cy.get(".MuiCardHeader-content").eq(0).find("p").contains(movies[0].title)
+            cy.get(".MuiCardHeader-content").eq(1).find("p").contains(movies[2].title)
+          });
       });
-    });
+
+
+
 });
