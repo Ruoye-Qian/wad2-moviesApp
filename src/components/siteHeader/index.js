@@ -52,7 +52,7 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-      <AppBar position="fixed" backgroundColor="#03a9f4"  >
+      <AppBar position="fixed" color="primary"  >
      
         <Toolbar>
           <Typography variant="h4" className={classes.title}>

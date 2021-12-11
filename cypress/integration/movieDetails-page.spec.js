@@ -48,6 +48,8 @@ describe("Movie Details Page", () => {
     it("should display the movie's details", () => {
         cy.get("h3").contains("Overview");
         cy.get("h3").next().contains(movie.overview);
+        cy.get("h6").contains("Similar Movies");
+        cy.get(".MuiTableCell-root").contains("Name");
         cy.get("ul")
           .eq(1)
           .within(() => {

@@ -1,15 +1,15 @@
 import React, { useState} from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
-import AccessTimeIcon from "@material-ui/icons/AccessTime";
-import MonetizationIcon from "@material-ui/icons/MonetizationOn";
+//import AccessTimeIcon from "@material-ui/icons/AccessTime";
+//import MonetizationIcon from "@material-ui/icons/MonetizationOn";
 // import StarRate from "@material-ui/icons/StarRate";
 // import NavigationIcon from "@material-ui/icons/Navigation";
 // import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 // import Drawer from "@material-ui/core/Drawer";
-// import MovieReviews from "../movieReviews"
+// import PersonCredit from "../personCredits"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PersonDetails = ({ person }) => {  // Don't miss this!
   const classes = useStyles();
-  //const [drawerOpen, setDrawerOpen] = useState(false);
+  // const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>
@@ -73,18 +73,9 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
           <Chip label={person.place_of_birth} className={classes.chip}/>
         </li>
       </Paper>
-    
+
       
-      {/* <Paper component="ul" className={classes.root}>
-        <li>
-          <Chip label="also_known_as" className={classes.chip} color="primary" />
-        </li>
-        {person.also_known_as.map((g) => (
-          <li key={g.name}>
-            <Chip label={g.name} className={classes.chip} />
-          </li>
-        ))}
-      </Paper> */}
+
 
     </>
   );
