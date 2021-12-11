@@ -29,8 +29,8 @@ const SiteHeader = ( { history }) => {
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuOptions = [
-    { label: "Login", path: "/login" },
-    { label: "Sign up", path: "/signup" },
+    //{ label: "Login", path: "/login" },
+    //{ label: "Sign up", path: "/signup" },
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Upcoming", path: "/movies/upcoming" },
@@ -52,8 +52,8 @@ const SiteHeader = ( { history }) => {
 
   return (
     <>
-      <AppBar position="fixed" color="secondary" >
-      {/* backgroundColor="#03a9f4" */}
+      <AppBar position="fixed" backgroundColor="#03a9f4"  >
+     
         <Toolbar>
           <Typography variant="h4" className={classes.title}>
             TMDB Client
