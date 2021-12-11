@@ -16,7 +16,6 @@ import WatchMoviesPage from './pages/watchMoviesPage';
 import NowplayingMoviesPage from './pages/nowplayingMoviesPage';
 import TopRatedMoviesPage from './pages/topRatedMoviesPage';
 import PopularMoviesPage from './pages/popularMoviesPage';
-import RecommendationMoviesPage from './pages/recommendationMoviesPage';
 import SignUpPage from './signup';
 import LoginPage from './login';
 import PersonPage from './pages/personPage';
@@ -51,7 +50,7 @@ const App = () => {
         <Route exact path="/persons/likes" component={FavoritePersonPage} />
         <Route path="/persons/:id" component={PersonDetailsPage} />
         <Route exact path="/persons" component={PersonPage} />
-        <Route exact path="/movies/:id/recommendations" component={RecommendationMoviesPage} />
+        {/* <Route exact path="/movies/:id/recommendations" component={RecommendationMoviesPage} /> */}
         <Route exact path="/movies/popular" component={PopularMoviesPage} />
         <Route exact path="/movies/topRated" component={TopRatedMoviesPage} />
         <Route exact path="/movies/nowplaying" component={NowplayingMoviesPage} />

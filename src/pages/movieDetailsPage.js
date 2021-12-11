@@ -7,8 +7,8 @@ import { getMovie } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
-import Button from "@material-ui/core/Button";
-import { Link } from "react-router-dom";
+//import Button from "@material-ui/core/Button";
+//import { Link } from "react-router-dom";
 
 const MovieDetailsPage = (props) => {
   const { id } = props.match.params
@@ -33,13 +33,16 @@ const MovieDetailsPage = (props) => {
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
 
-          <Link to={`/movies/${movie.id}`}>
-           <Button variant="outlined" size="medium" color="primary">
+          {/* <Link to={`/movies/${movie.id}`}>
+           <Button variant="outlined" size="medium" color="primary" align="center">
              Recommendations
            </Button>
-          </Link>
+          </Link> */}
 
-          </PageTemplate>
+         
+
+        </PageTemplate>
+
         </>
       ) : (
         <p>Waiting for movie details</p>

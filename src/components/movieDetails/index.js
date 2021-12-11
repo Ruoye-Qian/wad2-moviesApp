@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews"
+import MovieSimilar from "../movieSimilar"
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -85,7 +87,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       
 
       <Fab
-        color="secondary"
+        color="primary"
         variant="extended"
         onClick={() =>setDrawerOpen(true)}
         className={classes.fab}
@@ -96,6 +98,18 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
         <MovieReviews movie={movie} />
       </Drawer>
+
+      <Typography variant="h6" align="center">
+      Similar Movies
+      </Typography>
+      <Box sx={{ '& > :not(style)': { m: 1 } }}>
+        <MovieSimilar movie={movie} />
+      </Box>
+
+
+
+
+
 
     </>
   );

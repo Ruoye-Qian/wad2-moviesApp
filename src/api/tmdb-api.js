@@ -130,18 +130,6 @@ export const getPopularMovies = () => {
   });
 };
 
-export const getRecommendationMovies = (id) => {
-  return fetch(
-    ` https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-  )
-  .then((res) => res.json())
-  .then((json) => {
-    // console.log(json.results);
-    return json.results;
-  });
-};
-
-
 export const getPersons = () => {
   return fetch(
     `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
@@ -189,3 +177,16 @@ export const getPersonImages = ({ queryKey }) => {
     throw error
  });
 };
+
+export const getMovieSimilar = (id) => {
+  return fetch(
+    `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      // console.log(json.results);
+      return json.results;
+    });
+};
+
+
