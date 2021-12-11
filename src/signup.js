@@ -2,6 +2,7 @@ import React, { useState } from 'react' ;
 import { useFirebaseApp } from 'reactfire' ;
 import 'firebase/auth'
 //import './Signup.css' ;
+import PageTemplate from "./components/templateLoginPage";
  
 const Signup = () => {
   // User State
@@ -67,7 +68,9 @@ const handleSubmit = async (e) => {
  
   return (
     <>
-       <h1>Sign up</h1>
+      <PageTemplate
+      title='Sign up'
+      />
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Nickname" name="nickname" onChange={handleChange}/><br />
         <input type="text" placeholder="Email" name="email" onChange={handleChange}/><br />
