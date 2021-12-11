@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
   chip: {
     margin: theme.spacing(0.5),
   },
+  bord:{
+    margin:10,
+  },
   fab: {
     position: "fixed",
     bottom: theme.spacing(2),
@@ -40,7 +43,7 @@ const PersonDetails = ({ person }) => {  // Don't miss this!
       Biography
       </Typography>
 
-      <Typography variant="h6" component="p">
+      <Typography variant="h8" component="p" className={classes.bord}>
         {person.biography}
       </Typography>
 

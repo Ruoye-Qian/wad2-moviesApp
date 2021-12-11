@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1.5),
     margin: 0,
   },
+  bord:{
+    margin:10,
+  },
   chip: {
     margin: theme.spacing(0.5),
   },
@@ -40,7 +43,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         Overview
       </Typography>
 
-      <Typography variant="h6" component="p" >
+      <Typography variant="h7" component="p" className={classes.bord}>
         {movie.overview}
       </Typography>
 

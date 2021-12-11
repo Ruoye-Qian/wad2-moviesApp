@@ -4,16 +4,16 @@ import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
+// import InputLabel from "@material-ui/core/InputLabel";
+// import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+// import FormControl from "@material-ui/core/FormControl";
+// import Select from "@material-ui/core/Select";
 import img from '../../images/personfilter.jpg'
-import { getGenres } from "../../api/tmdb-api";
-import { useQuery } from "react-query";
-import Spinner from '../spinner'
+// import { getGenres } from "../../api/tmdb-api";
+// import { useQuery } from "react-query";
+// import Spinner from '../spinner'
 
 
 
@@ -33,19 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FilterPersonsCard(props) {
   const classes = useStyles();
-  const { data, error, isLoading, isError } = useQuery("genres", getGenres);
 
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  if (isError) {
-    return <h1>{error.message}</h1>;
-  }
-  const genres = data.genres;
-  if(genres[0].name!=="All"){
-    genres.unshift({ id: "0", name: "All" });
-  }
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
@@ -56,16 +44,30 @@ export default function FilterPersonsCard(props) {
     handleChange(e, "name", e.target.value);
   };
 
-  const handleGenreChange = (e) => {
-    handleChange(e, "genre", e.target.value);
+  // const handleSortChange = e => {
+  //   var kind = document.getElementById("sortin");
+  //   var myoption=kind.options[kind.selectedIndex].getAttribute('on');
+  //   if(myoption==='1'){
+  //     handleChange(e, "ASC", e.target.value);
+      
+  //   }else if(myoption==='2'){
+  //     handleChange(e, "DESC", e.target.value);
+  //   }
+  // };
+
+  const handleSortChange = (e, props) => {
+    handleChange(e, "popularity", e.target.value);
   };
+
+
+
 
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
-          Filter the Actors.
+          Search the Actors.
         </Typography>
         <TextField
          className={classes.formControl}
@@ -76,23 +78,22 @@ export default function FilterPersonsCard(props) {
          variant="filled"
          onChange={handleTextChange}
         />
-        <FormControl className={classes.formControl}>
-          <InputLabel id="genre-label">Gender</InputLabel>
-          <Select
-            labelId="genre-label"
-            id="genre-select"
-            value={props.genreFilter}
-            onChange={handleGenreChange}
-          >
-            {genres.map((genre) => {
-              return (
-                <MenuItem key={genre.id} value={genre.id}>
-                  {genre.name}
-                </MenuItem>
-              );
-            })}
-          </Select>
-        </FormControl>
+
+        <Typography variant="h5" component="h1">
+          <SearchIcon fontSize="large" />
+          Sorted by Popularity:
+        </Typography>
+        <TextField
+         className={classes.formControl}
+         id="filled-search"
+         label="Search field"
+         type="search"
+         value={props.sortFilter}
+         variant="filled"
+         onChange={handleSortChange}
+        />
+
+
       </CardContent>
       <CardMedia
         className={classes.media}
@@ -102,7 +103,7 @@ export default function FilterPersonsCard(props) {
       <CardContent>
         <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
-          Filter the actors.
+          Search the actors.
           <br />
         </Typography>
       </CardContent>

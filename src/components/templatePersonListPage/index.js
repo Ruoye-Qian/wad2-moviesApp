@@ -14,20 +14,27 @@ const useStyles = makeStyles({
 function PersonListPageTemplate({ persons, title, action }) {
   const classes = useStyles();
   const [nameFilter, setNameFilter] = useState("");
-  // const [genreFilter, setGenreFilter] = useState("0");
-  // const genreId = Number(genreFilter);
+  const [sortFilter, setSortFilter] = useState("");
+
 
   let displayedPersons = persons
     .filter((m) => {
       return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
-    // .filter((m) => {
-    //   return genreId > 0 ? m.genre_ids.includes(genreId) : true;
+    // .map((m) => {
+    //   return m.popularity;
     // });
 
+
+
+
   const handleChange = (type, value) => {
-    if (type === "name") setNameFilter(value);
-    // else setGenreFilter(value);
+    if (type === "name"){
+      setNameFilter(value);
+    } 
+    else if(type === "popularity"){
+      setSortFilter(value);
+    }
   };
 
   return (
@@ -40,7 +47,7 @@ function PersonListPageTemplate({ persons, title, action }) {
           <FilterCard
             onUserInput={handleChange}
             titleFilter={nameFilter}
-            // genreFilter={genreFilter}
+            sortFilter={sortFilter}
           />
         </Grid>
         <PersonList action={action} persons={displayedPersons}></PersonList>
