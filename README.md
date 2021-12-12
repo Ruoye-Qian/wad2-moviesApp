@@ -50,42 +50,42 @@ e.g.
 ### Component catalogue.
 ....Insert a screenshot from the Storybook UI that lists all the stories for the app's components, and highlight those relating to your new components.
 
-![](./images/storybook.png)
+![](./image/storybook.png)
 
 
 
 ### UI Design.
 ....Insert screenshots of the new/modified app pages you developed, include an appropriate caption for each one.
 
-![ ](../images/similarMovie.ipg)
+![ ](./image/similarMovie.ipg)
 
 >Shows simiar movies in movie detail page.
 
-![ ](../images/actor.ipg)
+![ ](./image/actor.ipg)
 
 >Shows actors.
 
-![ ](../images/review.ipg)
+![ ](./image/review.ipg)
 
 >Shows reviews.
 
-![ ](../images/actorDetails.ipg)
+![ ](./image/actorDetails.ipg)
 
 >Shows actor details.
 
-![ ](../images/TV.ipg)
+![ ](./image/TV.ipg)
 
 >Shows TV list.
 
-![ ](../images/drawer.ipg)
+![ ](./image/drawer.ipg)
 
 >Shows drawer.
 
-![ ](../images/nowplaying.ipg)
+![ ](./image/nowplaying.ipg)
 
 >Shows Nowplaying Movies page.
 
-![ ](../images/topRated.ipg)
+![ ](./image/topRated.ipg)
 
 >Shows Top Rated Movies page.
 
