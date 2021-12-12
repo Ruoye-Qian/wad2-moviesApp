@@ -57,13 +57,37 @@ e.g.
 ### UI Design.
 ....Insert screenshots of the new/modified app pages you developed, include an appropriate caption for each one.
 
-![ ](./images/view.png)
+![ ](./images/similarMovie.ipg)
 
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+>Shows simiar movies in movie detail page.
 
-![ ](./images/view.png)
+![ ](./images/actor.ipg)
 
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+>Shows actors.
+
+![ ](./images/review.ipg)
+
+>Shows reviews.
+
+![ ](./images/actorDetails.ipg)
+
+>Shows actor details.
+
+![ ](./images/TV.ipg)
+
+>Shows TV list.
+
+![ ](./images/drawer.ipg)
+
+>Shows drawer.
+
+![ ](./images/nowplaying.ipg)
+
+>Shows Nowplaying Movies page.
+
+![ ](./images/topRated.ipg)
+
+>Shows Top Rated Movies page.
 
 
 
