@@ -252,3 +252,23 @@ export const getTv = (args) => {
     throw error
  });
 };
+
+
+export const getTvRecommendation = (id) => {
+  return fetch(
+    `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${process.env.REACT_APP_TMDB_KEY}`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      // console.log(json.results);
+      return json.results;
+    });
+};
+
+export const getTvCast = id => {
+  return fetch(
+      `https://api.themoviedb.org/3/tv/${id}/credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+  )
+  .then(res => res.json())
+  .then(json => json.cast);
+}

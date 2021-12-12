@@ -7,7 +7,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 // import Drawer from "@material-ui/core/Drawer";
-//import MovieReviews from "../movieReviews"
+// import TvRecommendation from "../tvRecommendation"
 
 // import Box from '@material-ui/core/Box';
 
@@ -104,7 +104,9 @@ const TvDetails = ({ tv }) => {  // Don't miss this!
       <Box sx={{ '& > :not(style)': { m: 1 } }}>
         <MovieSimilar movie={movie} />
       </Box> */}
-
+      {/* <Box sx={{ '& > :not(style)': { m: 1 } }}>
+        <TvRecommendation tv={tv} />
+      </Box> */}
 
     </>
   );

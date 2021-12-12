@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link, Route,withRouter } from "react-router-dom";
 import TvDetails from "../components/tvDetails";
 import PageTemplate from "../components/templateTvPage";
 //import useMovie from "../hooks/useMovie";
@@ -7,8 +7,8 @@ import { getTv } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
-//import Button from "@material-ui/core/Button";
-//import { Link } from "react-router-dom";
+import TvCast from "../components/tvCast"
+import Grid from '@material-ui/core/Grid';
 
 const TvDetailsPage = (props) => {
   const { id } = props.match.params
@@ -32,17 +32,58 @@ const TvDetailsPage = (props) => {
         <>
           <PageTemplate tv={tv}>
             <TvDetails tv={tv} />
-
-          {/* <Link to={`/movies/${movie.id}`}>
-           <Button variant="outlined" size="medium" color="primary" align="center">
-             Recommendations
-           </Button>
-          </Link> */}
-
          
+          <div className="row" align="center">
+            <div className="col-12 ">
+              {!props.history.location.pathname.endsWith("/cast") ? (
+                <Link
+                  className="btn btn-primary btn-block active"
+                  to={`/tvs/${id}/cast`}
+                >
+                  Show Cast
+                </Link>
+              ) : (
+                  <Link
+                    className="btn btn-primary btn-block active"
+                    to={`/tvs/${id}`}
+                  >
+                    Hide Cast
+                  </Link>
+                )}
+            </div>
+          </div>
 
-        </PageTemplate>
+          {/* <div className="row">
+           <div className="col-12 ">
+            {!props.history.location.pathname.endsWith("/similar") ? (
+              <Link
+                className="btn btn-primary btn-block active"
+                to={`/movies/${id}/similar`}
+              >
+                Some Similar Movies 
+              </Link>
+            ) : (
+              <Link
+                className="btn btn-primary btn-block active"
+                to={`/movies/${id}`}
+              >
+                Hide 
+              </Link>
+            )}
+           </div>
+          </div> */}
 
+          {/* <Route
+              path={`/movies/:id/similar`}
+              render={props => <MovieSimilar movie={movie} {...props} />}
+          /> */}
+          <Route
+            path={`/tvs/:id/cast`}
+            render={props => <TvCast tv={tv} {...props} />}
+          />
+
+   
+</PageTemplate>
         </>
       ) : (
         <p>Waiting for tv details</p>
