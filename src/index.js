@@ -21,6 +21,8 @@ import LoginPage from './login';
 import PersonPage from './pages/personPage';
 import PersonDetailsPage from './pages/personDetailsPage';
 import FavoritePersonPage from './pages/likePersonsPage';
+import TvPage from './pages/tvPage';
+import TvsDetailsPage from './pages/tvDetailsPage';
 
 import { FirebaseAppProvider } from 'reactfire';
 import firebaseConfig from './firebaseConfig';
@@ -47,6 +49,8 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
             <Switch>
+        <Route path="/tvs/:id" component={TvsDetailsPage} />
+        <Route exact path="/tvs" component={TvPage} />
         <Route exact path="/persons/likes" component={FavoritePersonPage} />
         <Route path="/persons/:id" component={PersonDetailsPage} />
         <Route exact path="/persons" component={PersonPage} />
