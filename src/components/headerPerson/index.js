@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
-import HomeIcon from "@material-ui/icons/Home";
+//import HomeIcon from "@material-ui/icons/Home";
 import { withRouter } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
