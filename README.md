@@ -57,35 +57,35 @@ e.g.
 ### UI Design.
 ....Insert screenshots of the new/modified app pages you developed, include an appropriate caption for each one.
 
-![ ](./image/similarMovie.ipg)
+![ ](./image/similarMovie.jpg)
 
 >Shows simiar movies in movie detail page.
 
-![ ](./image/actor.ipg)
+![ ](./image/actor.jpg)
 
 >Shows actors.
 
-![ ](./image/review.ipg)
+![ ](./image/review.jpg)
 
 >Shows reviews.
 
-![ ](./image/actorDetails.ipg)
+![ ](./image/actorDetails.jpg)
 
 >Shows actor details.
 
-![ ](./image/TV.ipg)
+![ ](./image/TV.jpg)
 
 >Shows TV list.
 
-![ ](./image/drawer.ipg)
+![ ](./image/drawer.jpg)
 
 >Shows drawer.
 
-![ ](./image/nowplaying.ipg)
+![ ](./image/nowplaying.jpg)
 
 >Shows Nowplaying Movies page.
 
-![ ](./image/topRated.ipg)
+![ ](./image/topRated.jpg)
 
 >Shows Top Rated Movies page.
 
