@@ -14,7 +14,11 @@ import img from '../../images/personfilter.jpg'
 // import { getGenres } from "../../api/tmdb-api";
 // import { useQuery } from "react-query";
 // import Spinner from '../spinner'
-
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function FilterPersonsCard(props) {
   const classes = useStyles();
-
+  const [value, setValue] = React.useState('ASC');
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
@@ -44,23 +48,15 @@ export default function FilterPersonsCard(props) {
     handleChange(e, "name", e.target.value);
   };
 
-  // const handleSortChange = e => {
-  //   var kind = document.getElementById("sortin");
-  //   var myoption=kind.options[kind.selectedIndex].getAttribute('on');
-  //   if(myoption==='1'){
-  //     handleChange(e, "ASC", e.target.value);
-      
-  //   }else if(myoption==='2'){
-  //     handleChange(e, "DESC", e.target.value);
-  //   }
-  // };
-
-  const handleSortChange = (e, props) => {
-    handleChange(e, "popularity", e.target.value);
+  const handleSortChange = e => {
+    //  var kind = document.getElementById("sortin");
+    //  var myoption=kind.options[kind.selectedIndex].getAttribute('on');
+     if(value==='ASC'){
+       handleChange(e, "ASC", e.target.value);
+     }else if(value==='DESC'){
+       handleChange(e, "DESC", e.target.value);
+     }
   };
-
-
-
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -79,9 +75,9 @@ export default function FilterPersonsCard(props) {
          onChange={handleTextChange}
         />
 
-        <Typography variant="h5" component="h1">
+        {/* <Typography variant="h5" component="h1">
           <SearchIcon fontSize="large" />
-          Sorted by Popularity:
+          Sort by Popularity:
         </Typography>
         <TextField
          className={classes.formControl}
@@ -91,7 +87,21 @@ export default function FilterPersonsCard(props) {
          value={props.sortFilter}
          variant="filled"
          onChange={handleSortChange}
-        />
+        /> */}
+
+      <FormControl component="fieldset">
+        <Typography variant="h5" component="h1">
+          <SearchIcon fontSize="large" />
+          Sort by Popularity:
+        </Typography>
+       <RadioGroup row aria-label="gender" name="row-radio-buttons-group"
+              value={value}
+              onChange={handleSortChange}
+       >
+        <FormControlLabel value="ASC" control={<Radio />} label="ASC" />
+        <FormControlLabel value="DESC" control={<Radio />} label="DESC" />
+       </RadioGroup>
+      </FormControl>
 
 
       </CardContent>

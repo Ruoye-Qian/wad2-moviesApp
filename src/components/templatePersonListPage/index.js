@@ -21,10 +21,9 @@ function PersonListPageTemplate({ persons, title, action }) {
     .filter((m) => {
       return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
-    // .map((m) => {
-    //   return m.popularity;
-    // });
-
+    // .filter((m) => {
+    //   return sort(m.popularity,1);
+    // })
 
 
 
@@ -50,7 +49,7 @@ function PersonListPageTemplate({ persons, title, action }) {
             sortFilter={sortFilter}
           />
         </Grid>
-        <PersonList action={action} persons={displayedPersons}></PersonList>
+        <PersonList action={action} persons={displayedPersons}  ></PersonList>
       </Grid>
     </Grid>
   );
