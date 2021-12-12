@@ -8,7 +8,6 @@ import { useQuery } from "react-query";
 import Spinner from '../components/spinner'
 
 import TvCast from "../components/tvCast"
-import Grid from '@material-ui/core/Grid';
 
 const TvDetailsPage = (props) => {
   const { id } = props.match.params
