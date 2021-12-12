@@ -26,7 +26,7 @@ describe("Top Rated Page ", () => {
   beforeEach(() => {
     cy.visit("/")
     cy.get("header").find(".MuiToolbar-root").find("button").eq(0).click();
-    cy.get("li").eq(4).click();
+    cy.get("li").eq(3).click();
   });
   
     describe("Base test", () => {

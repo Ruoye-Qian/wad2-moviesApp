@@ -40,7 +40,7 @@ const TvDetailsPage = (props) => {
                   className="btn btn-primary btn-block active"
                   to={`/tvs/${id}/cast`}
                 >
-                  Show Cast
+                <button>  Show Cast</button>
                 </Link>
               ) : (
                   <Link
