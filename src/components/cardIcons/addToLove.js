@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
 import IconButton from "@material-ui/core/IconButton";
-import GradeIcon from '@material-ui/icons/Grade';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const AddToLovesIcon = ({ tv }) => {
   const context = useContext(MoviesContext);
@@ -12,7 +12,7 @@ const AddToLovesIcon = ({ tv }) => {
   };
   return (
     <IconButton aria-label="add to loves" onClick={handleAddToLoves}>
-      <GradeIcon color="primary" fontSize="large" />
+      <FavoriteIcon color="primary" fontSize="large" />
     </IconButton>
   );
 };
