@@ -100,7 +100,6 @@ export default function FilterPersonsCard(props) {
               onChange={handleSortChange}
        >
         <FormControlLabel value="ASC" control={<Radio />} label="ASC" />
-        <FormControlLabel value="DESC" control={<Radio />} label="DESC" />
        </RadioGroup>
       </FormControl>
 

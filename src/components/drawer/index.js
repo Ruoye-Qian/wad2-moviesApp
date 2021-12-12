@@ -15,7 +15,7 @@ import LiveTvRoundedIcon from '@material-ui/icons/LiveTvRounded';
 import LinkedCameraRoundedIcon from '@material-ui/icons/LinkedCameraRounded';
 import MovieFilterRoundedIcon from '@material-ui/icons/MovieFilterRounded';
 import TheatersIcon from '@material-ui/icons/Theaters';
-import FaceIcon from '@material-ui/icons/Face';
+// import FaceIcon from '@material-ui/icons/Face';
 
 import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { makeStyles } from "@material-ui/core/styles";
@@ -50,13 +50,6 @@ export function TemporaryDrawer() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
-      <ListItem>
-           <ListItemIcon><FaceIcon/> </ListItemIcon>
-           <Link to="/login">Login</Link>
-           <ListItemText />
-         </ListItem>
-      </List>
       <List>
       <ListItem>
            <ListItemIcon><TheatersIcon/> </ListItemIcon>

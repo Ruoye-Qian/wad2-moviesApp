@@ -2,7 +2,7 @@ import React, { useState } from 'react' ;
 //import { useFirebaseApp } from 'reactfire' ;
 import firebase from "./firebaseConfig.js"
 import 'firebase/auth'
-
+import { Link } from "react-router-dom";
 import PageTemplate from "./components/templateLoginPage";
 //import './Signup.css' ;
 
@@ -55,11 +55,21 @@ const Login = () => {
       <PageTemplate
       title='Login in'
       />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} align="center">
+        <box>
         <input type="text" placeholder="Email" name="email" onChange={handleChange}/><br />
+        </box>
+        <box>
         <input type="password" placeholder="Password" name="password" onChange={handleChange}/><br />
-        <button type="submit">Log in</button>
-      </form>
+        </box>
+        <box>
+        <Link
+                  to="/"
+                > 
+        <button type="submit" >Log in</button>
+        </Link>
+        </box>
+        </form>
       {user.error && <h4>{user.error}</h4>}
     </>
   )

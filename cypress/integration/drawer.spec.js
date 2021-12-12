@@ -33,26 +33,26 @@ describe("check function of drawer", () => {
 
     it("should allow navigation to the home page from the link", () => {
       cy.get("header").find(".MuiToolbar-root").find("button").eq(0).click();
-      cy.get("li").eq(1).click();
+      cy.get("li").eq(0).click();
       cy.url().should("include", `/`);
       cy.get("h3").contains("Discover Movies");
     });
 
    it("should allow navigation to the now playing movies page from the link", () => {
       cy.get("header").find(".MuiToolbar-root").find("button").eq(0).click();
-      cy.get("li").eq(2).click();
+      cy.get("li").eq(1).click();
       cy.url().should("include", `/nowplaying`);
       cy.get("h3").contains("Nowplaying Movies");
    });
    it("should allow navigation to the top rated movies page from the link", () => {
       cy.get("header").find(".MuiToolbar-root").find("button").eq(0).click();
-      cy.get("li").eq(3).click();
+      cy.get("li").eq(2).click();
       cy.url().should("include", `/topRated`);
       cy.get("h3").contains("Top Rated Movies");
    });
    it("should allow navigation to the popular movies page from the link", () => {
       cy.get("header").find(".MuiToolbar-root").find("button").eq(0).click();
-      cy.get("li").eq(4).click();
+      cy.get("li").eq(3).click();
       cy.url().should("include", `/popular`);
       cy.get("h3").contains("Popular Movies");
    });

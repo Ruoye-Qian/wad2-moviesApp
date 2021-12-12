@@ -39,7 +39,7 @@ const TvDetailsPage = (props) => {
                   className="btn btn-primary btn-block active"
                   to={`/tvs/${id}/cast`}
                 >
-                <button>  Show Cast</button>
+                <button>Show Cast</button>
                 </Link>
               ) : (
                   <Link
@@ -52,19 +52,19 @@ const TvDetailsPage = (props) => {
             </div>
           </div>
 
-          {/* <div className="row">
+          {/* <div className="row" align="center">
            <div className="col-12 ">
             {!props.history.location.pathname.endsWith("/similar") ? (
               <Link
                 className="btn btn-primary btn-block active"
-                to={`/movies/${id}/similar`}
+                to={`/tvs/${id}/similar`}
               >
-                Some Similar Movies 
+               <button>Some Similar TV </button>
               </Link>
             ) : (
               <Link
                 className="btn btn-primary btn-block active"
-                to={`/movies/${id}`}
+                to={`/tvs/${id}`}
               >
                 Hide 
               </Link>
@@ -73,8 +73,8 @@ const TvDetailsPage = (props) => {
           </div> */}
 
           {/* <Route
-              path={`/movies/:id/similar`}
-              render={props => <MovieSimilar movie={movie} {...props} />}
+              path={`/tvs/:id/similar`}
+              render={props => <TvSimilar tv={tv} {...props} />}
           /> */}
           <Route
             path={`/tvs/:id/cast`}
