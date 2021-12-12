@@ -16,7 +16,7 @@ import LinkedCameraRoundedIcon from '@material-ui/icons/LinkedCameraRounded';
 import MovieFilterRoundedIcon from '@material-ui/icons/MovieFilterRounded';
 import TheatersIcon from '@material-ui/icons/Theaters';
 import FaceIcon from '@material-ui/icons/Face';
-import HowToRegIcon from '@material-ui/icons/HowToReg';
+
 import { withRouter } from 'react-router-dom/cjs/react-router-dom.min';
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -54,13 +54,6 @@ export function TemporaryDrawer() {
       <ListItem>
            <ListItemIcon><FaceIcon/> </ListItemIcon>
            <Link to="/login">Login</Link>
-           <ListItemText />
-         </ListItem>
-      </List>
-      <List>
-      <ListItem>
-           <ListItemIcon><HowToRegIcon/> </ListItemIcon>
-           <Link to="/signup">Sign Up</Link>
            <ListItemText />
          </ListItem>
       </List>

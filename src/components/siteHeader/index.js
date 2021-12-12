@@ -32,15 +32,16 @@ const SiteHeader = ( { history }) => {
     //{ label: "Login", path: "/login" },
     //{ label: "Sign up", path: "/signup" },
     { label: "Home", path: "/" },
-    { label: "Favorites", path: "/movies/favorites" },
+    { label: "Favorite Movies", path: "/movies/favorites" },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Watch List", path: "/movies/watches" },
     // { label: "Now playing", path: "/movies/nowplaying" },
     // { label: "Top Rated", path: "/movies/topRated" },
     // { label: "Popular", path: "/movies/popular" },
     { label: "Actor", path: "/persons" },
-    { label: "Likes", path: "/persons/likes" },
+    { label: "Favorite Actors", path: "/persons/likes" },
     { label: "Tv", path: "/tvs" },
+    { label: "Favorite TV", path: "/tvs/loves" },
   ];
 
   const handleMenuSelect = (pageURL) => {
