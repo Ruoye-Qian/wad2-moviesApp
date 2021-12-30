@@ -77,6 +77,10 @@ e.g.
 
 >Shows TV list.
 
+![ ](./image/tvDeatils.png)
+
+>Shows TV details.
+
 ![ ](./image/drawer.jpg)
 
 >Shows drawer.
