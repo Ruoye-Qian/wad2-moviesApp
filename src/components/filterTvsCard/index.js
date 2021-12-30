@@ -4,12 +4,12 @@ import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
+// import InputLabel from "@material-ui/core/InputLabel";
+// import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
 import SearchIcon from "@material-ui/icons/Search";
-import FormControl from "@material-ui/core/FormControl";
-import Select from "@material-ui/core/Select";
+// import FormControl from "@material-ui/core/FormControl";
+// import Select from "@material-ui/core/Select";
 import img from '../../images/tvfilter.jpg'
 import { getTvGenres } from "../../api/tmdb-api";
 import { useQuery } from "react-query";
@@ -55,9 +55,9 @@ export default function FilterTvsCard(props) {
     handleChange(e, "name", e.target.value);
   };
 
-  const handleGenreChange = (e) => {
-    handleChange(e, "genre", e.target.value);
-  };
+  // const handleGenreChange = (e) => {
+  //   handleChange(e, "genre", e.target.value);
+  // };
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -75,7 +75,7 @@ export default function FilterTvsCard(props) {
          variant="filled"
          onChange={handleTextChange}
         />
-        <FormControl className={classes.formControl}>
+        {/* <FormControl className={classes.formControl}>
           <InputLabel id="genre-label">Genre</InputLabel>
           <Select
             labelId="genre-label"
@@ -91,7 +91,7 @@ export default function FilterTvsCard(props) {
               );
             })}
           </Select>
-        </FormControl>
+        </FormControl> */}
       </CardContent>
       <CardMedia
         className={classes.media}
